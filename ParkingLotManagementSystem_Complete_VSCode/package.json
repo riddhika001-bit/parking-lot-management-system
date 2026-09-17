@@ -1,0 +1,11 @@
+{
+  "name": "parking-lot-management-system",
+  "version": "1.0.0",
+  "description": "Parking Lot Management System - Java Swing Application",
+  "scripts": {
+    "start": "javac -d bin src/main/java/com/parking/*.java && java -cp bin com.parking.Main"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
