@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "Parking Lot Management System - Java Swing Application",
   "scripts": {
-    "start": "javac -d bin ParkingLotManagementSystem_Complete_VSCode/src/main/java/com/parking/*.java && java -cp bin com.parking.Main"
+    "start": "javac -d bin ParkingLotManagementSystem_Complete_VSCode/src/main/java/com/parking/*.java && java -cp bin com.parking.Main",
+    "start:web": "node server.js"
+  },
+  "dependencies": {
+    "express": "5.2.1"
   },
   "keywords": [],
   "author": "",

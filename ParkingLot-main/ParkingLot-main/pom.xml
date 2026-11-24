@@ -7,23 +7,33 @@
   <name>Archetype - Parking</name>
   <url>http://maven.apache.org</url>
 
+  <properties>
+    <lombok.version>1.18.44</lombok.version>
+  </properties>
+
   <dependencies>
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>1.18.30</version>
+      <version>${lombok.version}</version>
       <scope>provided</scope>
     </dependency>
-
   </dependencies>
   <build>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.14.1</version>
         <configuration>
-          <source>20</source>
-          <target>20</target>
+          <release>25</release>
+          <annotationProcessorPaths>
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>${lombok.version}</version>
+            </path>
+          </annotationProcessorPaths>
         </configuration>
       </plugin>
     </plugins>

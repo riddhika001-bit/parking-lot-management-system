@@ -5,9 +5,6 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 public class StaffDashboard extends BaseDashboard {
-    // Q-01 FIX: charge rate as a named constant, not a magic number
-    private static final double RATE_PER_HOUR = 40.0;
-
     // BUG-05 FIX: area is now resolved from the staff member's actual assigned parking ID
     private final String[] currentStaff;
     private final ParkingArea area;
@@ -126,8 +123,8 @@ public class StaffDashboard extends BaseDashboard {
             for (ParkingSlot s : searchArea.getSlots()) {
                 if (s.isOccupied() && s.getVehicle().getNumber().equalsIgnoreCase(vehicleNum)) {
                     long minutes = Math.max(1, (System.currentTimeMillis() - s.getEntryTime()) / 60000);
-                    // Q-01 FIX: use the named constant RATE_PER_HOUR instead of magic number 40.0
-                    double amount = Math.ceil(minutes / 60.0) * RATE_PER_HOUR;
+                    double rate = searchArea.getRateForVehicle(record.getVehicleType());
+                    double amount = Math.ceil(minutes / 60.0) * rate;
                     s.free();
                     record.close(amount);
                     JOptionPane.showMessageDialog(this,

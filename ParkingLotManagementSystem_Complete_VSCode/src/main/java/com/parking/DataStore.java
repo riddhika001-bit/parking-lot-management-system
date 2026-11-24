@@ -9,13 +9,23 @@ public class DataStore {
     public static final List<String[]> users = new ArrayList<>();
     public static final List<String[]> staff = new ArrayList<>();
 
+    // Standard rates per vehicle type (₹/hour)
+    public static final double BIKE_RATE = 10.0;
+    public static final double CAR_RATE = 30.0;
+    public static final double HEAVY_RATE = 50.0;
+
     static {
-        areas.add(new ParkingArea(1, "VVIT Main Parking", "Kothanur", 20));
-        areas.add(new ParkingArea(2, "City Center Parking", "Bengaluru", 30));
-        areas.add(new ParkingArea(3, "Mall Parking", "Hennur", 25));
+        areas.add(new ParkingArea(1, "VVIT Main Parking", "Kothanur, Bengaluru", 20, BIKE_RATE, CAR_RATE, HEAVY_RATE));
+        areas.add(new ParkingArea(2, "City Center Parking", "MG Road, Bengaluru", 30, BIKE_RATE, CAR_RATE, HEAVY_RATE));
+        areas.add(new ParkingArea(3, "Mall Parking", "Hennur, Bengaluru", 25, BIKE_RATE, CAR_RATE, HEAVY_RATE));
+        areas.add(new ParkingArea(4, "Palace Grounds Parking", "Sayyaji Rao Road, Mysuru", 18, BIKE_RATE, CAR_RATE, HEAVY_RATE));
+        areas.add(new ParkingArea(5, "Coastal City Mall Parking", "Kadri, Mangaluru", 22, BIKE_RATE, CAR_RATE, HEAVY_RATE));
 
         users.add(new String[]{"Riddhika Sharma", "user", "user123", "KA01AB1234", "Car"});
-        staff.add(new String[]{"Parking Staff", "staff", "staff123", "1"});
+        users.add(new String[]{"Rahul Verma", "rahul", "user123", "KA05CD5678", "SUV"});
+        users.add(new String[]{"Priya Patel", "priya", "user123", "KA03EF9012", "Bike"});
+        staff.add(new String[]{"Vikram Joshi", "staff", "staff123", "1"});
+        staff.add(new String[]{"Amit Kumar", "staff2", "staff123", "2"});
     }
 
     public static ParkingArea areaById(int id) {
