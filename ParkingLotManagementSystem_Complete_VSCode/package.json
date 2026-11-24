@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Parking Lot Management System - Java Swing Application",
   "scripts": {
-    "start": "javac -d bin src/main/java/com/parking/*.java && java -cp bin com.parking.Main"
+    "build": "javac --release 21 -d bin src/main/java/com/parking/*.java",
+    "start": "npm run build && java -cp bin com.parking.Main"
   },
   "keywords": [],
   "author": "",

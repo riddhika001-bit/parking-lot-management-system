@@ -2,6 +2,27 @@
 
 A Core Java Swing project based on the supplied synopsis, expanded into a role-based desktop dashboard.
 
+## Requirements and run
+
+- Install JDK 25 (latest LTS), set `JAVA_HOME` to its installation directory, and add `%JAVA_HOME%\bin` to `PATH`.
+- Verify the setup with `java -version` and `javac -version`; both should report version 25.
+- For VS Code, install the **Extension Pack for Java**, run **Java: Configure Java Runtime**, and select the installed JDK 25.
+
+From this directory, compile and run the desktop application with:
+
+```powershell
+npm start
+```
+
+This runs the Java 25 build and launches `com.parking.Main`. To compile without launching the UI, run `npm run build`.
+
+To run without npm, from this directory use:
+
+```powershell
+javac --release 25 -d bin src/main/java/com/parking/*.java
+java -cp bin com.parking.Main
+```
+
 ## Roles
 - User / Client
 - Parking Area Staff
@@ -11,13 +32,6 @@ A Core Java Swing project based on the supplied synopsis, expanded into a role-b
 - User: `user` / `user123`
 - Staff: `staff` / `staff123`
 - Admin: `admin` / `admin123`
-
-## Run in VS Code
-1. Open this folder in VS Code.
-2. Install **Extension Pack for Java** if needed.
-3. Open `src/main/java/com/parking/Main.java`.
-4. Click **Run**.
-5. Use one of the demo credentials above.
 
 ## Features
 ### User dashboard
